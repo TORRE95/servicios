@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Calculadoras</title>
+		<link rel="stylesheet" type="text/css" href="css/calculadoras.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://kit.fontawesome.com/ac90298fce.js" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/calculadoraBasica.js"></script>
+		<script type="text/javascript" src="js/calculadoraAdv.js"></script>
+		<script type="text/javascript" src="js/modos.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	</head>
+	<body onload="disableOp()">
+		<div class="contenido">
+			<div class="panel-izq">
+				<div class="botones-modo">
+					<div class="boton-modo" onclick="calculadora_basica()">CALCULADORA BÁSICA</div>
+					<div class="boton-modo" onclick="calculadora_Adv()">CALCULADORA AVANZADA</div>
+					<div class="boton-modo" onclick="texto()">ANALIZADOR DE TEXTO</div>
+				</div>
+				
+			</div>
+			<div class="panel-centro">
+				<div class="calculadora-basica" id="calculadora-basica">
+					<div class="operacion">
+						<input type="text" id="operacion">
+					</div>
+					<div class="botones-calc-basica">
+						<div class="numeros-calc-basica">
+							<div class="boton-numero" id="boton-9-basica" onclick="type_number(7)"><p>7</p></div>
+							<div class="boton-numero" id="boton-8-basica" onclick="type_number(8)"><p>8</p></div>
+							<div class="boton-numero" id="boton-7-basica" onclick="type_number(9)"><p>9</p></div>
+							<div class="boton-numero" id="boton-6-basica" onclick="type_number(4)"><p>4</p></div>
+							<div class="boton-numero" id="boton-5-basica" onclick="type_number(5)"><p>5</p></div>
+							<div class="boton-numero" id="boton-4-basica" onclick="type_number(6)"><p>6</p></div>
+							<div class="boton-numero" id="boton-3-basica" onclick="type_number(1)"><p>1</p></div>
+							<div class="boton-numero" id="boton-2-basica" onclick="type_number(2)"><p>2</p></div>
+							<div class="boton-numero" id="boton-1-basica" onclick="type_number(3)"><p>3</p></div>
+							<div class="boton-numero" id="boton-0-basica" onclick="type_number(0)"><p>0</p></div>
+							<div class="boton-numero" id="boton-=-basica"><p>=</p></div>
+						</div>
+						<div class="operaciones-calc-basica">
+							<div class="boton-op" id="boton-CE-basica" onclick="limpiar()"><p>CE</p></div>
+							<div class="boton-op" id="boton-div-basica" onclick="type_op('/')"><p>/</p></div>
+							<div class="boton-op" id="boton-mult-basica" onclick="type_op('*')"><p>*</p></div>
+							<div class="boton-op" id="boton-suma-basica" onclick="type_op('+')"><p>+</p></div>
+							<div class="boton-op" id="boton-resta-basica" onclick="type_op('-')"><p>-</p></div>
+							<div class="boton-op" id="boton-raiz-basica" onclick="type_op('√')"><p>√</p></div>
+							<div class="boton-op" id="boton-log-basica" onclick="type_op('log(')"><p>log</p></div>
+						</div>
+					</div>
+				</div>
+				<!-------CALCULADORA AVANZADA-------->
+				<div class="calculadora-avanzada" id="calculadora-avanzada">
+					<div class="operacion">
+						<input type="text" id="operacion">
+					</div>
+					<div class="botones-calc-avanzada">
+						<div class="numeros-calc-avanzada">
+							<div class="boton-numero-adv" id="7" onclick="type_number(7)"><p>7</p></div>
+							<div class="boton-numero-adv" id="8" onclick="type_number(8)"><p>8</p></div>
+							<div class="boton-numero-adv" id="9" onclick="type_number(9)"><p>9</p></div>
+							<div class="boton-numero-adv" id="4" onclick="type_number(4)"><p>4</p></div>
+							<div class="boton-numero-adv" id="5" onclick="type_number(5)"><p>5</p></div>
+							<div class="boton-numero-adv" id="6" onclick="type_number(6)"><p>6</p></div>
+							<div class="boton-numero-adv" id="1" onclick="type_number(1)"><p>1</p></div>
+							<div class="boton-numero-adv" id="2" onclick="type_number(2)"><p>2</p></div>
+							<div class="boton-numero-adv" id="3" onclick="type_number(3)"><p>3</p></div>
+							<div class="boton-numero-adv" id="0" onclick="type_number(0)"><p>0</p></div>
+							<div class="boton-numero" id="boton-numero" onclick="type_number(',')"><p>,</p></div>
+						</div>
+						<div class="operaciones-calc-avanzada">
+							<div class="boton-op-adv" id="CE" onclick="limpiar()"><p>CE</p></div>
+							<div class="boton-op-adv" id="max" onclick="type_opAdv"><p>MAX</p></div>
+							<div class="boton-op-adv" id="min" onclick="type_opAdv"><p>MIN</p></div>
+							<div class="boton-op-adv" id="media" onclick="type_opAdv"><p>MEDIA</p></div>
+							<div class="boton-op-adv" id="mediana" onclick="type_opAdv"><p>MEDIANA</p></div>
+							<div class="boton-op-adv" id="moda" onclick="type_opAdv"><p>MODA</p></div>
+							<div class="boton-op-adv" id="rango" onclick="type_opAdv"><p>RANGO</p></div>
+							<div class="boton-op-adv" id="desv" onclick="type_opAdv"><p>DESV</p></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel-der"></div>
+		</div>
+	</body>
+</html>
